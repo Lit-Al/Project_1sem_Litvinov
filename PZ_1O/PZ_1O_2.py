@@ -13,11 +13,11 @@ print('Количество пробелов в файле:', count)
 f.close()
 # открываю один для чтения, другой для записи(файлы)
 f = open('text18-12.txt', 'r', encoding='utf-8')
-f1 = open('myFile.txt', 'w', encoding='utf-8')
+f1 = open('my_file.txt', 'w', encoding='utf-8')
 f1.write(f.read())  # переношу текст в другой файл
 
 f = open('text18-12.txt', 'r', encoding='utf-8')
-f1 = open('myFile.txt', 'w', encoding='utf-8')
+f1 = open('my_file.txt', 'w', encoding='utf-8')
 z = '***'
 # в конце каждой строки вставляю ***
 for name in f:
