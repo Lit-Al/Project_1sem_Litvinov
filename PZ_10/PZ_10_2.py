@@ -16,12 +16,20 @@ f = open('text18-12.txt', 'r', encoding='utf-8')
 f1 = open('my_file.txt', 'w', encoding='utf-8')
 f1.write(f.read())  # переношу текст в другой файл
 
-f = open('text18-12.txt', 'r', encoding='utf-8')
-f1 = open('my_file.txt', 'w', encoding='utf-8')
-z = '***'
-# в конце каждой строки вставляю ***
-for name in f:
-    f1.write(name.rstrip() + z + '\n')
-f1.close()
+with open('my_file.txt', 'r', encoding='utf-8') as f:
+    with open('my_file.txt', 'w', encoding='utf-8') as f1:
+        count1 = 0
+        for line in f:
+            count1 += 1
+            if count1 < 7:
+                f1.write(line)
+                f1.write('*** \n')
+            else:
+                f1.write(line)
+                f1.write('\n***')
+
+
+
+
 
 
